@@ -1,0 +1,21 @@
+[Tue Aug 30 16:57:04.499486 2016] [authz_core:error] [pid 10604:tid 1100] [client ::1:20423] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi
+[Tue Aug 30 16:57:04.546486 2016] [authz_core:error] [pid 10604:tid 1100] [client ::1:20423] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi, referer: http://localhost:5000/
+[Tue Aug 30 17:11:47.066925 2016] [authz_core:error] [pid 12948:tid 1100] [client ::1:20775] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi
+[Tue Aug 30 17:11:47.115925 2016] [authz_core:error] [pid 12948:tid 1100] [client ::1:20775] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi, referer: http://localhost:5000/
+[Tue Aug 30 17:12:16.535889 2016] [authz_core:error] [pid 12948:tid 1100] [client 127.0.0.1:20786] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi
+[Tue Aug 30 17:12:16.555889 2016] [authz_core:error] [pid 12948:tid 1100] [client 127.0.0.1:20786] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi, referer: http://127.0.0.1:5000/
+[Tue Aug 30 17:12:34.761848 2016] [authz_core:error] [pid 12948:tid 1096] [client 10.1.4.236:20791] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi
+[Tue Aug 30 17:12:34.765848 2016] [authz_core:error] [pid 12948:tid 1096] [client 10.1.4.236:20791] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi
+[Tue Aug 30 17:12:34.867848 2016] [authz_core:error] [pid 12948:tid 1096] [client 10.1.4.236:20791] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi, referer: http://10.1.4.236:5000/
+[Tue Aug 30 17:12:35.789420 2016] [authz_core:error] [pid 12948:tid 1096] [client 10.1.4.236:20791] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi
+[Tue Aug 30 17:12:35.794420 2016] [authz_core:error] [pid 12948:tid 1096] [client 10.1.4.236:20791] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi, referer: http://10.1.4.236:5000/
+[Tue Aug 30 17:12:36.381004 2016] [authz_core:error] [pid 12948:tid 1096] [client 10.1.4.236:20791] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi
+[Tue Aug 30 17:12:36.413004 2016] [authz_core:error] [pid 12948:tid 1096] [client 10.1.4.236:20791] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi, referer: http://10.1.4.236:5000/
+[Tue Aug 30 17:13:27.070004 2016] [authz_core:error] [pid 12948:tid 1096] [client 10.1.4.236:20799] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi
+[Tue Aug 30 17:13:27.100004 2016] [authz_core:error] [pid 12948:tid 1096] [client 10.1.4.236:20799] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi, referer: http://10.1.4.236:5000/
+[Tue Aug 30 17:13:34.581786 2016] [authz_core:error] [pid 13544:tid 1096] [client 10.1.4.236:20801] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi
+[Tue Aug 30 17:13:34.611786 2016] [authz_core:error] [pid 13544:tid 1096] [client 10.1.4.236:20801] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi, referer: http://10.1.4.236:5000/
+[Tue Aug 30 17:13:37.289318 2016] [authz_core:error] [pid 13544:tid 1096] [client 10.1.4.236:20801] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi
+[Tue Aug 30 17:13:37.303318 2016] [authz_core:error] [pid 13544:tid 1096] [client 10.1.4.236:20801] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi, referer: http://10.1.4.236:5000/
+[Tue Aug 30 17:14:55.354147 2016] [authz_core:error] [pid 10284:tid 1100] [client ::1:20933] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi
+[Tue Aug 30 17:14:55.382147 2016] [authz_core:error] [pid 10284:tid 1100] [client ::1:20933] AH01630: client denied by server configuration: D:/python/myhtml/app/myhtml.wsgi, referer: http://localhost:5000/

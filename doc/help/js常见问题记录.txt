@@ -1,0 +1,13 @@
+1.利用POST请求发送JSON数据,为防WEB服务器缓存,需要在url末尾添加一个随时变更的部分,例如 + new Date().getTime(),即添加当前时间戳
+2.获取时间戳:new Date().getTime();
+3.若前端要传递JSON表单给后台,JS代码中需要将JSON对象转换为字符串,方法为stringify().flask.request有form|args|data|values|json|get_json多种处理请求数据的方式,若请求的
+数据格式为application/x-www-form-urlencoded,且服务器端需要添加force=True来强制转换传递过来的数据类型;若请求的数据格式为application/json,且服务器端接收JSON表单不需要
+任何参数
+4.eval("("+ ?? + ")");加上圆括号的目的是迫使eval函数在处理JavaScript代码的时候强制将括号内的表达式（expression）转化为对象，而不是作为语 句（statement）来执行。举一
+个例子，例如对象字面量{}，如若不加外层的括号，那么eval会将大括号识别为JavaScript代码块的开始 和结束标记，那么{}将会被认为是执行了一句空语句。所以下面两个执行结果是不同
+的：
+alert(eval("{}")); // return undefined
+alert(eval("({})"));// return object[Object]
+5.js的match方法接收一个参数,可以为字符串可以为正则表达式.输出内容为数组,可通过[%d]的方式取数据.使用方法为data.match(regexp)
+6.js的正则表达式常用方法test(regexp)(检查字符串中有无符合要求的字段),exec(regexp)().使用方法为regexp.test(data)
+7.

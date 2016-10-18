@@ -1,0 +1,41 @@
+﻿1.使用绿色版的mysql,第一次要先清空data,然后mysqld --initialize；然后修改my-default.ini,添加信息：
+	[mysqld]
+	basedir=绿色Mysql路径
+	datadir=绿色Mysql\data路径
+
+2.mysql是命令行工具,管理数据库；mysqld是mysql的服务进程
+
+3.如果cmd启动mysqld服务(进程)报错：“发生系统错误2.系统找不到指定的文件.",请检查my-default.ini的basedir和datadir路径是否正确.如果错误,请修改；如果正确,请执行mysqld -remove后mysqld -install,最后尝试net start mysql
+
+4.如果mysql版本为5.7,并且数据库服务器为windows,那么需要做如下操作:
+	1.第一次登陆时需要先暂停mysqld进程
+	2.然后cmd下,mysqld --skip-grant-tables
+	3.mysql -u root -p
+	4.mysql下,update user set authentication_string=PASSWORD('new password') where User='root';
+	5.flush privileges;
+	6.quit;
+	7.cmd下,net start mysql;
+	8.接下来需要强关mysqld进程,然后尝试用新密码登录
+	9.由于mysql5.7新增了安全机制，所以这时候需要SET PASSWORD = PASSWORD('new password');
+
+5.任何情况下，都不推荐使用root来操作数据库，所以需要新建用户并授权:
+	1.新建用户:create user 'new user' identified by 'new password'
+	2.授权用户:grant insert,delete,update,select on *.* to 'new user'
+
+6.创建数据库:create database dbname DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_general_ci;
+7.创建数据表:create table tbname(column1 valuetype1,column2 valuetype2);
+8.转换表编码:alter table tbname convert to character set utf8mb4;
+9.查看表编码:show create table tbname;
+10.查看所有数据库:show databases;
+11.查看数据库下所有表:show tables;
+12.添加/删除列:alter/drop table tbname add column clname valuetype;
+13.修改列数据类型方法一:alter table tbname modify column clname valuetype;
+   修改列数据类型方法二(整体修改):alter table tbname change clname clname valuetype;
+13.添加/删除主键:alter table tbname add/drop primary key(clname);
+14.主键自增加:alter table tbname modify clname integer_increment;
+15.插入数据:insert tbname (clname1,clname2) values ("char",int);
+16.删除数据:insert tbname (clname1,clname2) values ("char",int);
+17.展示当前数据库连接:show processlist;
+18.终止某数据库连接:kill
+
+19.如果发现无法远程连接mysql,可以进mysql数据库查看user表中指定用户的Host值.修改为%后flush privileges;即可

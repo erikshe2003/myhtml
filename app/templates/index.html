@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>我的工具箱(测试)</title>
+        <link rel="icon" href="../static/images/icon2.ico" type="image/x-icon" />
+        <script src="../static/js/jquery-3.0.0.min.js"></script>
+        <script src="../static/js/jquery.color-2.1.2.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="../static/css/index.css">
+    </head>
+    <body style="background-color: rgb(220,220,220);overflow: hidden">
+        <div id="workspace" class="workspace">
+            <div id="user_top" class="user_top">
+                <ul id="user_top_name" class="user_top_name">
+                    <li id="user_top_name_li" class="user_top_name_li"></li>
+                </ul>
+                <div class="user_top_drop_beforelogin" id="user_top_drop_beforelogin">
+                    <div id="form" class="form" style="width: 100%;height: 100%">
+                        <ul id="user_top_drop_loginfor" class="user_top_drop_loginfor">
+                            <li style="background: #E0E0E0;border-radius:3px;">
+                                <input id="user_top_drop_username" class="user_top_drop_username" type="text" placeholder="Username" autocomplete="off" />
+                            </li>
+                            <li style="background: #E0E0E0;margin-top: 10px;border-radius:3px;">
+                                <input id="user_top_drop_password" class="user_top_drop_password" type="password" placeholder='Password' autocomplete="off" />
+                            </li>
+                            <li style="margin-top:10px;padding-bottom: 10px">
+                                <label style="font-size:14px;color: white;font-family: 幼圆">
+                                    <input id="user_top_drop_remember" class="user_top_drop_remember" type="checkbox" style="vertical-align:middle" />记住我
+                                </label>
+                                <input type="button" id="loginButton" class="loginButton" style="width: 50%;height: 20px;float: right;border-radius: 3px;border: none;font-family: 幼圆" value="提交" onclick="login_request()"/>
+                        </ul>
+                    </div>
+                </div>
+                <div class="user_top_drop_afterlogin" id="user_top_drop_afterlogin">
+                    <input type="button" id="user_top_drop_reset" class="user_top_drop_reset" value="重置密码" onclick="show_user_resetpassword()"/>
+                    <input type="button" id="user_top_drop_logout" class="user_top_drop_logout" value="注销登陆" onclick="logout()"/>
+                </div>
+            </div>
+            <div id="user_resetpassword" class="user_resetpassword">
+                <ul id="user_resetpassword_info" class="user_resetpassword_info">
+                    <li>
+                        <p>旧密码</p>
+                    </li>
+                    <li style="background: #E0E0E0;border-radius:3px;">
+                        <input id="user_resetpassword_old" class="user_resetpassword_old" type="password" placeholder="请输入旧密码" autocomplete="off" />
+                    </li>
+                    <li>
+                        <p>新密码</p>
+                    </li>
+                    <li style="background: #E0E0E0;border-radius:3px;">
+                        <input id="user_resetpassword_new" class="user_resetpassword_new" type="password" placeholder='请输入新密码' autocomplete="off" />
+                    </li>
+                    <li>
+                        <p>确认密码</p>
+                    </li>
+                    <li style="background: #E0E0E0;border-radius:3px;">
+                        <input id="user_resetpassword_confirm" class="user_resetpassword_confirm" type="password" placeholder='请再输一遍' autocomplete="off" />
+                    </li>
+                </ul>
+                <input type="button" id="user_resetpassword_cancel" class="user_resetpassword_cancel" value="取消" onclick="cancel_reset_password()"/>
+                <input type="button" id="user_resetpassword_reset" class="user_resetpassword_reset" value="确定" onclick="confirm_reset_password()"/>
+            </div>
+            <div id="function_banner" class="function_banner">
+                <div id="function_banner_1" class="function_banner_1">
+                    <input type="button" id="function_banner_1_button" class="function_banner_1_button" value="我的主页" onclick="click_button(this)"/>
+                    <input type="button" id="function_banner_2_button" class="function_banner_2_button" value="我的考勤" onclick="click_button(this)"/>
+                    <input type="button" id="function_banner_3_button" class="function_banner_3_button" value="我的工具" onclick="click_button(this)"/>
+                </div>
+            </div>
+            <div id="function_page" class="function_page">
+                <div id="home_page" class="home_page">
+                    <img id="home_page_icon" class="home_page_icon" src="../static/images/home.png" />
+                    <p id="home_page_title" class="home_page_title" >我的主页</p>
+                </div>
+                <div id="attendance_page" class="attendance_page">
+                    <p id="attendance_please_holdon" class="attendance_please_holdon">请稍候</p>
+                    <div id="attendance_choose_user" class="attendance_choose_user">
+                        <p>请选择需要导出考勤的人员:</p>
+                        <label>
+                            <input type="checkbox" onclick="selectAll(this)" title="all"/>全选
+                        </label>
+                        <div id="attendance_choose_userlist" class="attendance_choose_userlist"></div>
+                        <div id="attendance_choose_buttons" class="attendance_choose_buttons">
+                            <input type="button" value="确定" onclick="export_attendance_request()"/>
+                            <input type="button" value="取消" onclick="concel_export_attendance()"/>
+                        </div>
+                    </div>
+                    <div id="attendance_page_date" class="attendance_page_date">
+                        <div id="attendance_page_date_year" class="attendance_page_date_year">
+                            <p id="attendance_page_date_year_n" class="attendance_page_date_year_n"></p>
+                        </div>
+                        <p id="attendance_page_date_year_c" class="attendance_page_date_year_c">年</p>
+                        <div id="attendance_page_date_month" class="attendance_page_date_month">
+                            <p id="attendance_page_date_month_n" class="attendance_page_date_month_n"></p>
+                        </div>
+                        <p id="attendance_page_date_month_c" class="attendance_page_date_month_c">月</p>
+                    </div>
+                    <table id="attendance_page_days" class="attendance_page_days">
+                        <thead id="attendance_page_days_head" class="attendance_page_days_head">
+                            <tr>
+                                <th>日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th>
+                            </tr>
+                        </thead>
+                        <tbody id="attendance_page_days_body" class="attendance_page_days_body">
+                            <tr>
+                                <td id="days_0_0" class="days_0_0"></td>
+                                <td id="days_0_1" class="days_0_1"></td>
+                                <td id="days_0_2" class="days_0_2"></td>
+                                <td id="days_0_3" class="days_0_3"></td>
+                                <td id="days_0_4" class="days_0_4"></td>
+                                <td id="days_0_5" class="days_0_5"></td>
+                                <td id="days_0_6" class="days_0_6"></td>
+                            </tr>
+                            <tr>
+                                <td id="days_1_0" class="days_1_0"></td>
+                                <td id="days_1_1" class="days_1_1"></td>
+                                <td id="days_1_2" class="days_1_2"></td>
+                                <td id="days_1_3" class="days_1_3"></td>
+                                <td id="days_1_4" class="days_1_4"></td>
+                                <td id="days_1_5" class="days_1_5"></td>
+                                <td id="days_1_6" class="days_1_6"></td>
+                            </tr>
+                            <tr>
+                                <td id="days_2_0" class="days_2_0"></td>
+                                <td id="days_2_1" class="days_2_1"></td>
+                                <td id="days_2_2" class="days_2_2"></td>
+                                <td id="days_2_3" class="days_2_3"></td>
+                                <td id="days_2_4" class="days_2_4"></td>
+                                <td id="days_2_5" class="days_2_5"></td>
+                                <td id="days_2_6" class="days_2_6"></td>
+                            </tr>
+                            <tr>
+                                <td id="days_3_0" class="days_3_0"></td>
+                                <td id="days_3_1" class="days_3_1"></td>
+                                <td id="days_3_2" class="days_3_2"></td>
+                                <td id="days_3_3" class="days_3_3"></td>
+                                <td id="days_3_4" class="days_3_4"></td>
+                                <td id="days_3_5" class="days_3_5"></td>
+                                <td id="days_3_6" class="days_3_6"></td>
+                            </tr>
+                            <tr>
+                                <td id="days_4_0" class="days_4_0"></td>
+                                <td id="days_4_1" class="days_4_1"></td>
+                                <td id="days_4_2" class="days_4_2"></td>
+                                <td id="days_4_3" class="days_4_3"></td>
+                                <td id="days_4_4" class="days_4_4"></td>
+                                <td id="days_4_5" class="days_4_5"></td>
+                                <td id="days_4_6" class="days_4_6"></td>
+                            </tr>
+                            <tr>
+                                <td id="days_5_0" class="days_5_0"></td>
+                                <td id="days_5_1" class="days_5_1"></td>
+                                <td id="days_5_2" class="days_5_2"></td>
+                                <td id="days_5_3" class="days_5_3"></td>
+                                <td id="days_5_4" class="days_5_4"></td>
+                                <td id="days_5_5" class="days_5_5"></td>
+                                <td id="days_5_6" class="days_5_6"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="button" id="attendance_page_button_previous" class="attendance_page_button_previous" value="" onclick="show_previous_month()"/>
+                    <input type="button" id="attendance_page_button_commit" class="attendance_page_button_commit" value="提交" onclick="attendance_commit_request()"/>
+                    <input type="button" id="attendance_page_button_export" class="attendance_page_button_export" value="导出" onclick="show_export_attendance()"/>
+                    <input type="button" id="attendance_page_button_next" class="attendance_page_button_next" value="" onclick="show_next_month()"/>
+                    <div id="attendance_page_tips" class="attendance_page_tips">
+                        <p>注:1.若某一天的考勤填写不完整,则当天的考勤不会提交</p>
+                        <p style="margin-left: 24px">2.若当天有调休,则调休时间段按照正常上班考勤填写</p>
+                    </div>
+                </div>
+                <div id="tools_page" class="tools_page">
+                    <p>办公辅助</p>
+                    <div>
+                        <p>bug2xlsx</p>
+                        <input id="bug2xlsx" class="bug2xlsx" type="button" value="在线版" onclick="openFunctionPage(this)"/>
+                        <input id="bug2xlsx" class="bug2xlsx" type="button" value="离线版" onclick="fileDownload(this)"/>
+                        <div id="bug2xlsx_online" class="bug2xlsx_online">
+                            <input id="bug2xlsx_mainTab" class="bug2xlsx_mainTab" type="button" value="   bug2xlsx" onclick="bug2xlsx_changeTab(this)"/>
+                            <input id="bug2xlsx_helpTab" class="bug2xlsx_helpTab" type="button" value="   ?-_-help" onclick="bug2xlsx_changeTab(this)"/>
+                            <div id="bug2xlsx_mainPage" class="bug2xlsx_mainPage"></div>
+                            <div id="bug2xlsx_helpPage" class="bug2xlsx_helpPage"></div>
+                            <input id="bug2xlsx_online_close" class="bug2xlsx_online_close" type="button" onclick="closeFunctionPage(this)" />
+                        </div>
+                    </div>
+                    <p>测试工具</p>
+                </div>
+            </div>
+            <div id="errorbar_bottom" class="errorbar_bottom">
+                <img id="errorbar_bottom_img" class="errorbar_bottom_img" src="../static/images/stop_36px.png" />
+                <b id="errorbar_bottom_message" class="errorbar_bottom_message"></b>
+            </div>
+            <div id="blackback" class="blackback"></div>
+        </div>
+        <script src="../static/js/index.js"></script>
+    </body>
+</html>

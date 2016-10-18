@@ -1,0 +1,5 @@
+1.
+2.input button 要使它在div中垂直对齐，可以设置其vertical-align: middle
+3.取input text上输入的文字，可以用取value,而取文本标签内的文字可以用innerHTML
+4.IE8开始IE浏览器符合W3C标准，创建XMLHttpRequest的方式和ff/chrome/Op等浏览器一致
+5.text-align样式作用于div下的元素的文字，而不是元素的文字

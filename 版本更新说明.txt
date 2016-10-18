@@ -1,0 +1,23 @@
+v0.1(completed)
+1.美化登录页
+http://www.cnblogs.com/wenzichiqingwa/archive/2012/11/21/2780996.html
+
+v0.2(completed)
+1.index页重写，取消flask的form模板
+2.取消除index和404页外其他一切页面。index唯一，页面全动态，请求返回ajax，数据传输JSON
+
+v0.3(completed without 2)
+1.完善登录成功部分。登陆后服务器根据用户信息与是否30天生成加密的cookie存放于mysql表中，并且传递给页面，页面相应生成cookie
+2.mysql于30天后自动删除过期的cookie
+
+v0.4(completed without deleting cookie)
+1.完善退出登录部分。退出登录后服务器与客户端同时删除cookie，此时退回到初始登录页
+
+v0.5(waiting)
+1.将bug2xlsx功能挪至myhtml
+
+v0.6(ing)
+1.编写登陆后首页，名字为“我的主页”，可定制，提供常用链接/今日天气/日历等功能
+
+v0.7(ing)
+1.编写考勤管理页，名字为“我的考勤”
